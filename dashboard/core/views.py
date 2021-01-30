@@ -166,7 +166,7 @@ def open_file(request):
     # tk.messagebox.showinfo("showinfo", "Data has been successfully uploaded")
     # tk.messagebox.showinfo("showinfo", gb_value)
     
-    print("this is data dump:" + dd_value)
+    # print("this is data dump:" + dd_value)
     window.destroy()
     # return HttpResponseRedirect('/')
     y="*File uploaded Successfully !! Pls choose another file to upload"
@@ -178,12 +178,13 @@ def ddlist(request):
     # root = tk.Tk()
     # root.withdraw()    
     answer = request.GET['ddlist']  
+    # print('this is user selection',answer)
     request.session['ddvalue'] = answer
     # gb_value=answer
     # tk.messagebox.showinfo("showinfo", answer)
     # tk.messagebox.showinfo("showinfo", gb_value)
     
-    print("this is drop down:" + gb_value)
+    # print("this is drop down:" + gb_value)
     # return gb_value
     
     
