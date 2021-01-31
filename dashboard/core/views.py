@@ -7,7 +7,7 @@ from django.contrib.auth import login, authenticate
 from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import Employee
 import pandas as pd
-import pyodbc
+# import pyodbc
 import numpy as np
 import os
 from tkinter.filedialog import askopenfilename, asksaveasfilename
