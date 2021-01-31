@@ -168,10 +168,10 @@
                   <!-- Your name: -->
                 </td>
                 <td>
-                  {% for rc_data in aldata %}
+                  {% for rc_data in countdata %}
                   {% ifchanged %}
-                  <label  style="color: Red;">7 </label>
-                  <!-- <label  style="color: Red;">{{rc_data.unmatched_data_count}} </label> -->
+                  <!-- <label  style="color: Red;">7 </label> -->
+                  <label  style="color: Red;">{{rc_data.0}} </label>
                   {% endifchanged %}
                   {% endfor %}
                 </td>

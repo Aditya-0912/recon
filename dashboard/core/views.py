@@ -216,8 +216,14 @@ def reco_details(request):
     # sql_query3=sql_query1.select_related(sql_query2)
 
     cursor=connection.cursor()
-    cursor.execute('select t1.* from recoso_db.core_Merchant_data t1 inner join recoso_db.core_transaction_data t2 on t1.ReferenceID=t2.Order_ref_ID where t1.net_amount<>t2.Total_Amount')
+    #below code worksfor mysql
+    # cursor.execute('select t1.* from recoso_db.core_Merchant_data t1 inner join recoso_db.core_transaction_data t2 on t1.ReferenceID=t2.Order_ref_ID where t1.net_amount<>t2.Total_Amount')
+    cursor.execute('select t1.* from core_Merchant_data t1 inner join core_transaction_data t2 on t1."ReferenceID"=t2."Order_ref_ID" where t1.net_amount<>t2."Total_Amount"')
     sql_query=cursor.fetchall()
+    cursor.execute('select count(t1.*) from core_Merchant_data t1 inner join core_transaction_data t2 on t1."ReferenceID"=t2."Order_ref_ID" where t1.net_amount<>t2."Total_Amount"')
+    count_query=cursor.fetchall()
+    # sql_query.append(count_query)
+    print(count_query)
     # print('this is final data',sql_query)
     # for index, row in sql_query.iterrows():
     # for  row in sql_query:
@@ -235,6 +241,6 @@ def reco_details(request):
 
     # all_data=reco_data.objects.all()
 
-    return render(request,"index.html",{'aldata':sql_query})
+    return render(request,"index.html",{'aldata':sql_query,'countdata':count_query})
     # return render(request,"index.html",context)
     # {'aldata':all_data},
