@@ -25,6 +25,7 @@ SECRET_KEY = 'u)blch2wmf4&xqk+m^_mxu&q+-g4n0noh4dxt8!nht^fhi&ktk'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+# ALLOWED_HOSTS = []
 ALLOWED_HOSTS = ['139.59.80.193']
 
 
@@ -88,11 +89,11 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',    
         'NAME': 'recoso_db', # database name
         # 'USER': 'postgres', # for local
-        'USER': 'recoso', # database username
+        'USER': 'recoso', # for prod
         'PASSWORD': 'Happyme@234', # database password
         'HOST': 'localhost',
         # 'PORT': '3308',#for local
-        'PORT': '',
+        'PORT': '', #for prod
     }
 }
 
@@ -135,9 +136,9 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS=[
-    os.path.join(BASE_DIR,'core/static')
+    os.path.join(BASE_DIR,'/static')
 ]
-STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
+STATIC_ROOT = os.path.join(BASE_DIR, 'reco_static/')
 # STATIC_ROOT = STATIC_URL
 # STATIC_URL = '/static/'
 # MEDIA_URL = '/media/'

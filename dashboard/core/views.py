@@ -68,7 +68,7 @@ def open_file(request):
     df1 = pd.DataFrame(data_1)
     df1.replace([np.inf, -np.inf], np.nan, inplace = True)
     df1 = df1.fillna(0)
-    print(df1.head())
+    # print(df1.head())
 
     if(dd_value=="1"):
         del_merchantdata=merchant_data.objects.get_queryset()
