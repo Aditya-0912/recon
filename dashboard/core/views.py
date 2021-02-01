@@ -25,9 +25,9 @@ from django.db import  connection
 filepath=""
 gb_value=""
 
-if os.environ.get('DISPLAY','') == '':
-    print('no display found. Using :0.0')
-    os.environ.__setitem__('DISPLAY', ':0.0')
+# if os.environ.get('DISPLAY','') == '':
+#     print('no display found. Using :0.0')
+#     os.environ.__setitem__('DISPLAY', ':0.0')
 class Index(LoginRequiredMixin, View):
     template = 'index.html'
     login_url = '/login/'
